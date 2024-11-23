@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4, #fbc2eb);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    color: #fff;
+}
+
+.birthday-text {
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    animation: textGlow 2s infinite;
+}
+
+.message {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.celebrate-button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.celebrate-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Balloons Animation */
+.balloons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.balloon {
+    width: 50px;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #ff6f61, #d84343);
+    position: absolute;
+    bottom: -150px;
+    animation: float 6s infinite ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.balloon::after {
+    content: "";
+    width: 2px;
+    height: 80px;
+    background: #fff;
+    position: absolute;
+    bottom: -80px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.balloon1 { left: 10%; animation-delay: 0s; }
+.balloon2 { left: 30%; animation-delay: 2s; }
+.balloon3 { left: 50%; animation-delay: 4s; }
+.balloon4 { left: 70%; animation-delay: 1s; }
+.balloon5 { left: 90%; animation-delay: 3s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-300px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes textGlow {
+    0%, 100% { text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.5); }
+    50% { text-shadow: 4px 4px 16px rgba(255, 255, 255, 1); }
+}
